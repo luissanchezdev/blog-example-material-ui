@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom/client'
 import { useState } from 'react'
-
+import styled from '@emotion/styled'
 import {
   Container,
   Table,
@@ -26,6 +26,15 @@ import {
   useNavigate,
   useMatch
 } from "react-router-dom"
+
+const ButtonCustom = styled.button`
+  background: #F4F2DE;
+  font-size: 1em;
+  margin: 1em 0.25em 1em 0.25em;
+  padding: 0.25em 1em;
+  border: 2px solid #E9B384;
+  border-radiud: 3px;
+`
 
 
 const Home = () => (
@@ -100,9 +109,9 @@ const Login = (props) => {
           <TextField label="password" type='password' />
         </div>
         <div>
-          <Button variant="contained" color="primary" type="submit">
+          <ButtonCustom type="submit">
             login
-          </Button>
+          </ButtonCustom>
         </div>
       </form>
     </div>
@@ -197,10 +206,6 @@ const App = () => {
         <Route path="/login" element={<Login onLogin={login} />} />
         <Route path="/" element={<Home />} />
       </Routes>
-      <div>
-        <br />
-        <em>Note app, Department of Computer Science 2022</em>
-      </div>
     </Container>
   )
 }
